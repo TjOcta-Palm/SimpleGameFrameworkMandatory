@@ -17,7 +17,6 @@ namespace SimpleGameFramework.DesignPatterns
             _iattackItem = attackItem;
         }
 
-        public int BaseDamage { get; set; }
 
         public int CurrentDamage
         {

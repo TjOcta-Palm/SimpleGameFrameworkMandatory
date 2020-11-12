@@ -47,16 +47,16 @@ namespace SimpleGameFramework
 
         public int Hit(Creature enemy)
         {
-            return _damage = _attackItem.CurrentDamage;
+            return _damage += _attackItem.CurrentDamage;
         }
 
         public void Loot(WorldObjects lootWorldObjects)
         {
-            if (lootWorldObjects == _attackItem)
+            if (lootWorldObjects.GetType() == typeof(AttackItem))
             {
                 _attackItem = (AttackItem) lootWorldObjects;
             }
-            else if (lootWorldObjects == _defenceItem)
+            else if (lootWorldObjects.GetType() == typeof(DefenceItem))
             {
                 _defenceItem = (DefenceItem) lootWorldObjects;
             }

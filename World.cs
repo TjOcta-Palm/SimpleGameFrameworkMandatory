@@ -8,13 +8,9 @@ namespace SimpleGameFramework
     class World
     {
         
-        private static World _instance;
         public List<WorldObjects> worldObjects;
         public Position worldBorderPosition;
 
-        private World()
-        {
-        }
 
         public World(Position worldSize)
         {
@@ -22,11 +18,10 @@ namespace SimpleGameFramework
             worldObjects = new List<WorldObjects>();
         }
 
-        public static World WorldInstance => _instance ?? (_instance = new World());
 
         public void GetAllItems()
         {
-            var weapons = worldObjects.Select(i => i.Name).Where(d => d.GetType() == typeof(AttackItem));
+            var weapons = worldObjects.Select(i => i.GetType()).Where(d => d == typeof(AttackItem));
         }
     }
 }
