@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using SimpleGameFramework.Interface;
 
@@ -77,5 +78,18 @@ namespace SimpleGameFramework
             return HitPoints;
         }
 
+        private List<IAttackItem> equipedAttackItems = new List<IAttackItem>();
+        private List<IDefenceItem> equipDefenceItems = new List<IDefenceItem>();
+
+        public void EquipAttack(IAttackItem a)
+        {
+            equipedAttackItems.Add(a);
+        }
+
+        public void EquipDefence(IDefenceItem d)
+        {
+            equipDefenceItems.Add(d);
+
+        }
     }
 }

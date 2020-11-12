@@ -14,5 +14,8 @@ namespace SimpleGameFramework.Interface
         int Hit(Creature enemy);
         void Loot(WorldObjects lootWorldObjects);
         int RecieveHit(int damageFromAttacker);
+
+        void EquipAttack(IAttackItem a);
+        void EquipDefence(IDefenceItem d);
     }
 }
